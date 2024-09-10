@@ -37,3 +37,7 @@ declare module "*.svg" {
   const src: string;
   export default src;
 }
+
+declare module "@fox/mediacloud-ux-styleguide-poc" {
+  const Button: React.ComponentType<any>;
+}

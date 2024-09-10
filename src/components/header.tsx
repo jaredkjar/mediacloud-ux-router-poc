@@ -1,16 +1,6 @@
-export default function Header(props) {
-  const buttonStyle: React.CSSProperties = {
-    margin: "0 10px",
-    height: "50px",
-    width: "160px",
-    backgroundColor: "#405cf5",
-    borderRadius: "6px",
-    fontSize: "100%",
-    padding: "0 25px",
-    cursor: "pointer",
-    color: "#fff",
-    fontWeight: "bold",
-  };
+import { Button } from "@fox/mediacloud-ux-styleguide-poc";
+
+export default function Header() {
 
   const headerStyle: React.CSSProperties = {
     display: "flex",
@@ -24,24 +14,21 @@ export default function Header(props) {
 
   return (
     <div style={headerStyle}>
-      <button
-        style={buttonStyle}
+      <Button
         onClick={() => window.history.pushState({}, "", "home")}
+        text={'React home!'}
       >
-        React home!
-      </button>
-      <button
-        style={buttonStyle}
+      </Button>
+      <Button
         onClick={() => window.history.pushState({}, "", "vue")}
+        text={'Vue home!'}
       >
-        Vue home!
-      </button>
-      <button
-        style={buttonStyle}
+      </Button>
+      <Button
         onClick={() => window.history.pushState({}, "", "svelte")}
+        text={'Svelte home!'}
       >
-        Svelte home!
-      </button>
+      </Button>
     </div>
   );
 }
