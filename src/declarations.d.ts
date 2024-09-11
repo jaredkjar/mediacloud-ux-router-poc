@@ -40,4 +40,5 @@ declare module "*.svg" {
 
 declare module "@fox/mediacloud-ux-styleguide-poc" {
   const Button: React.ComponentType<any>;
+  const AccountButton: React.ComponentType<any>;
 }
