@@ -31,7 +31,7 @@ const menuItems = [
 export default function Menu() {
   const [activePage, setActivePage] = useState(
     menuItems.find(
-      (item) => item.page === window.location.pathname.replace("/", "")
+      (item) => item.page === window.location.pathname.replace("/mediacloud-root-config", "")
     )?.title || ""
   );
 
