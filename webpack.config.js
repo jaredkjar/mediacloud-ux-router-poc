@@ -10,6 +10,7 @@ module.exports = (webpackConfigEnv, argv) => {
   });
 
   return merge(defaultConfig, {
+    externals: ["react", "react-dom", "styled-components"],
     // modify the webpack config however you'd like to by adding to this object
   });
 };

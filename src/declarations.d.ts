@@ -42,3 +42,5 @@ declare module "@fox/mediacloud-ux-styleguide-poc" {
   const Button: React.ComponentType<any>;
   const AccountButton: React.ComponentType<any>;
 }
+
+declare module "styled-components";

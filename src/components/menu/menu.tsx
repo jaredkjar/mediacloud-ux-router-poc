@@ -7,12 +7,12 @@ const menuItems = [
     page: "home",
   },
   {
-    title: "Channels",
-    page: "channels",
+    title: "Assets",
+    page: "assets",
   },
   {
-    title: "People",
-    page: "people",
+    title: "Collections",
+    page: "collections",
   },
   {
     title: "Replay",
@@ -29,9 +29,10 @@ const menuItems = [
 ];
 
 export default function Menu() {
+    
   const [activePage, setActivePage] = useState(
     menuItems.find(
-      (item) => item.page === window.location.pathname.replace("/mediacloud-root-config", "")
+      (item) => item.page === window.location.pathname.replace("/", "")
     )?.title || ""
   );
 
@@ -46,7 +47,7 @@ export default function Menu() {
         {menuItems.map((item) => (
           <MenuItem
             key={item.title}
-            isActive={item.title === activePage}
+            $isActive={item.title === activePage}
             onClick={(e) => onItemClicked(item)}
           >
             {item.title}

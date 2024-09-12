@@ -19,12 +19,12 @@ export const Sticky = styled.div`
 `;
 
 interface MenuItemProps {
-  isActive: boolean;
+  $isActive: boolean;
 }
 
 export const MenuItem = styled.div<MenuItemProps>`
-  ${({ isActive }) =>
-    isActive &&
+  ${({ $isActive }) =>
+    $isActive &&
     `
     background-color: rgba(36, 178, 218, .14) !important;
     border-radius: 4px;
