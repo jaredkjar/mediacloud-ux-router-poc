@@ -1,25 +1,25 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOMClient from "react-dom/client";
 import singleSpaReact from "single-spa-react";
-import Root from "./root.component";
+import { cssLifecycleFactory } from "vite-plugin-single-spa/ex";
 
-const RenderApp = (props) => {
-  return (
-    <React.StrictMode>
-      <Root name="@fox-mediacloud-ux-router-poc" />
-    </React.StrictMode>
-  );
-};
-
-const lifecycles = singleSpaReact({
-  renderType: "createRoot",
+const lc = singleSpaReact({
   React,
-  ReactDOM,
-  rootComponent: RenderApp,
-  errorBoundary(err, info, props) {
-    // Customize the root error boundary for your microfrontend here.
-    return null;
+  ReactDOMClient,
+  errorBoundary(err: any, _info: any, _props: any) {
+    console.log(err)
+    return <div>Error: {err}</div>;
+  },
+  // use loadRootComponent attribute, instead of rootComponent, to ensure preamble code is injected into the root component before mounting.
+  // see vite.config.ts for details on the preamble.
+  loadRootComponent: async () => {
+    const { default: App } = await import("./App");
+    return App;
   },
 });
-
-export const { bootstrap, mount, unmount } = lifecycles;
+// IMPORTANT:  Because the file is named spa.tsx, the string 'spa'
+// must be passed to the call to cssLifecycleFactory.
+const cssLc = cssLifecycleFactory("spa" /* optional factory options */);
+export const bootstrap = [cssLc.bootstrap, lc.bootstrap];
+export const mount = [cssLc.mount, lc.mount];
+export const unmount = [cssLc.unmount, lc.unmount];
