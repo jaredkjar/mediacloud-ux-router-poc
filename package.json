@@ -1,17 +1,15 @@
 {
   "name": "@fox/mediacloud-ux-router-poc",
+  "type": "module",
   "scripts": {
-    "start": "webpack serve --port 9001",
-    "start:standalone": "webpack serve --env standalone",
-    "build": "concurrently npm:build:*",
-    "build:webpack": "webpack --mode=production",
-    "analyze": "webpack --mode=production --env analyze",
+    "start": "vite",
+    "build": "tsc -b && vite build",
+    "start:build": "vite preview",
     "lint": "eslint src --ext js,ts,tsx",
     "format": "prettier --write .",
     "check-format": "prettier --check .",
     "test": "cross-env BABEL_ENV=test jest",
     "watch-tests": "cross-env BABEL_ENV=test jest --watch",
-    "prepare": "husky install",
     "coverage": "cross-env BABEL_ENV=test jest --coverage",
     "build:types": "tsc",
     "deploy": "git subtree push --prefix dist origin gh-pages"
@@ -53,8 +51,14 @@
     "@types/react-dom": "^17.0.9",
     "@types/systemjs": "^6.1.1",
     "@types/webpack-env": "^1.16.2",
+    "@vitejs/plugin-react": "^4.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "single-spa": "^5.9.3",
-    "single-spa-react": "^4.3.1"
+    "single-spa-react": "^4.3.1",
+    "vite": "^5.4.5",
+    "vite-plugin-externalize-dependencies": "^1.0.1",
+    "vite-plugin-single-spa": "^0.7.0"
   },
   "types": "dist/fox-mediacloud-ux-router-poc.d.ts"
 }

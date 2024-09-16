@@ -3,9 +3,9 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "declaration": true,
-    "declarationDir": "dist"
+    "declarationDir": "dist",
   },
-  "files": ["src/fox-mediacloud-ux-router-poc.tsx"],
+  "files": ["src/spa.tsx"],
   "include": ["src/**/*"],
   "exclude": ["src/**/*.test*"]
 }
