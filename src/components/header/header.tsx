@@ -5,7 +5,7 @@ import {
   AccountButtonContainer,
 } from "./header.styles";
 
-import MediaCloudLogoSVG from "../../images/mediacloud.svg";
+import MediaCloudLogoSVG from "../../assets/mediacloud.svg";
 
 export default function Header() {
   return (
