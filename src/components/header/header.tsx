@@ -1,4 +1,4 @@
-import { AccountButton } from "@fox/mediacloud-ux-styleguide-poc";
+import { AccountButton } from "@fox-poc/mediacloud-ux-styleguide-poc";
 import {
   Header as StyledHeader,
   MediaCloudLogo,
