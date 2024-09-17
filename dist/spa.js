@@ -1,1 +1,1 @@
-import{b as a,m as p,u as s}from"./assets/spa-CzZFsjEe.js";import"react";import"react-dom";export{a as bootstrap,p as mount,s as unmount};
+import{b as a,m,u as s}from"./assets/spa-BQ2GZ3oq.js";export{a as bootstrap,m as mount,s as unmount};
