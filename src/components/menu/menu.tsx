@@ -1,6 +1,11 @@
 import { useState } from "react";
 import { Menu as StyledMenu, Sticky, MenuItem } from "./menu.style";
 
+type MenuItem = {
+  title: string;
+  page: string;
+}
+
 const menuItems = [
   {
     title: "Home",
@@ -29,14 +34,16 @@ const menuItems = [
 ];
 
 export default function Menu() {
-    
+  
+  const append = window.location.hostname === "fox-poc.github.io" ? "/mediacloud-ux-root-config-poc/" : "/";
+
   const [activePage, setActivePage] = useState(
     menuItems.find(
-      (item) => item.page === window.location.pathname.replace("/", "")
+      (item) => item.page === window.location.pathname.replace(`${append}`, "")
     )?.title || ""
   );
 
-  const onItemClicked = (item) => {
+  const onItemClicked = (item : MenuItem ) => {
     setActivePage(item.title);
     window.history.pushState({}, activePage, item.page);
   };
@@ -48,7 +55,7 @@ export default function Menu() {
           <MenuItem
             key={item.title}
             $isActive={item.title === activePage}
-            onClick={(e) => onItemClicked(item)}
+            onClick={() => onItemClicked(item)}
           >
             {item.title}
           </MenuItem>
