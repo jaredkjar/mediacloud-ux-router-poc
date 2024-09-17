@@ -19,7 +19,7 @@ const APPLICATION_EXTERNALS: string[] = ["@demo/util"];
 const NPM_EXTERNALS: string[] = ["react", "react-dom", "styled-components"];
 
 // TODO: replace this with the actual CDN URL
-const BASE_URL_DEPLOYMENT = `http://localhost:${PORT}/`;
+const BASE_URL_DEPLOYMENT = `./`;
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command }) => ({
