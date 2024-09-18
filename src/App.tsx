@@ -3,7 +3,7 @@ import Menu from "./components/menu/menu";
 
 function App(props: { groups: string[]; token: string }) {
 
-  const { groups = [], token = "" } = props;
+  const { groups = [] } = props;
 
   return (
     <div style={{ fontFamily: "Arial, sans-serif" }}>
