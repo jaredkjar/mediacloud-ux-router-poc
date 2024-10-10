@@ -1,4 +1,4 @@
-import { AccountButton } from "@fox/mediacloud-ux-styleguide-poc";
+import { AccountButton } from "@fox-poc/mediacloud-ux-styleguide-poc";
 import {
   Header as StyledHeader,
   MediaCloudLogo,
@@ -7,11 +7,16 @@ import {
 
 import MediaCloudLogoSVG from "../../assets/mediacloud.svg";
 
-export default function Header() {
+export default function Header({ groups }: { groups: string[] }) {
+
+  const showGroups = () => {
+    alert(groups.join(", "));
+  }
+
   return (
     <StyledHeader>
       <MediaCloudLogo src={MediaCloudLogoSVG} />
-      <AccountButtonContainer>
+      <AccountButtonContainer onClick={showGroups}>
         <AccountButton text={'JK'}/>
       </AccountButtonContainer>
     </StyledHeader>
